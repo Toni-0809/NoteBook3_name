@@ -9,11 +9,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="NoteBook3.Core\Data\" />
-    <Folder Include="NoteBook3.Core\Entity\" />
-    <Folder Include="NoteBook3.Core\Service\" />
-    <Folder Include="NoteBook3.Core\Utility\" />
-    <Folder Include="NoteBook3.Integration\" />
+    <Compile Include="NoteBook3.Core\NoteBook3.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="notebook3.integration\NoteBook3.Integration.csproj" />
   </ItemGroup>
 
 </Project>

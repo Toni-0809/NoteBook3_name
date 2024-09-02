@@ -1,4 +1,6 @@
 ﻿using NoteBook3_name.NoteBook3.App.Core;
+using NoteBook3_name.NoteBook3.Core.Entity;
+using NoteBook3_name.NoteBook3.Core.Service;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -27,7 +29,7 @@ namespace NoteBook3_name.NoteBook3.App
         private ObservableCollection<Note> _NoteList2 = new ObservableCollection<Note>();
         public ObservableCollection<Note> NoteList2 { get => _NoteList2; set { _NoteList2 = value; OnPropertyChanged("NoteList2"); } }
 
-        private NoteService2 NoteService2;
+        private NoteService2;
 
         private Note _selectedNote;
         public Note SelectedNote
@@ -42,8 +44,8 @@ namespace NoteBook3_name.NoteBook3.App
 
         public MainViewModel(NoteService2 service)
         {
-            NoteService2 = service;
-            NoteList2 = new ObservableCollection<Note>(NoteService2.GetAll());
+            NoteService3 = service;
+            NoteList2 = new ObservableCollection<Note>(NoteService3.GetAll());
         }
 
 
@@ -55,10 +57,10 @@ namespace NoteBook3_name.NoteBook3.App
                 return addCommand ??
                   (addCommand = new RelayCommand(obj =>
                   {
-                      NoteService2.Create(
+                      NoteService3.Create(
                           new Note(Input)
                           );
-                      NoteList2 = new ObservableCollection<Note>(NoteService2.GetAll());
+                      NoteList2 = new ObservableCollection<Note>(NoteService3.GetAll());
                   }));
             }
         }
@@ -71,10 +73,10 @@ namespace NoteBook3_name.NoteBook3.App
                 return deleteCommand ??
                   (deleteCommand = new RelayCommand(obj =>
                   {
-                      NoteService2.Delete(
+                      NoteService3.Delete(
                           SelectedNote2.ItemId
                           );
-                      NoteList2 = new ObservableCollection<Note>(NoteService2.GetAll());
+                      NoteList2 = new ObservableCollection<Note>(NoteService3.GetAll());
                   }));
             }
         }
@@ -87,11 +89,11 @@ namespace NoteBook3_name.NoteBook3.App
                 return editCommand ??
                   (editCommand = new RelayCommand(obj =>
                   {
-                      SelectedNote2.Title = Input;
-                      NoteService2.Update(
-                          SelectedNote2
+                      SelectedNote3.Title = Input;
+                      NoteService3.Update(
+                          SelectedNote3
                           );
-                      NoteList2 = new ObservableCollection<Note>(NoteService2.GetAll());
+                      NoteList2 = new ObservableCollection<Note>(NoteService3.GetAll());
                   }));
             }
         }
