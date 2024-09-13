@@ -2,9 +2,8 @@
 
 namespace Note_3.DTOs
 {
-    public record class UpdateUsersDTO(
-         [Required]
+    public record class UpdateNoteListDTO(
+     [Required]
     [StringLength(128)]
-    string Name
-    );
+    string Title);
 }

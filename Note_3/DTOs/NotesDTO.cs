@@ -5,6 +5,7 @@
         int Id,
         string Title,
         string Entry,
-        int UsersId);
+        int UsersId,
+        int NoteListId);
 
 }

@@ -10,8 +10,11 @@ namespace Note_3.Entities
         public string Title { get; set; }
         public string Entry { get; set; }
 
-        public int UsersId { get; set; }
-        public Users? Users { get; set; }
+        public int UserId { get; set; }
+        public User? User { get; set; }
+
+        public int NoteListId {  get; set; }
+        public NoteList? NoteList { get; set; }
 
     } 
 }

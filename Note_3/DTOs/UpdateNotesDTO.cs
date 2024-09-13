@@ -7,7 +7,8 @@ namespace Note_3.DTOs
        [Required]
       [StringLength(256)]
       string Title,
-       [Required] int UsersId,
+       [Required] int UserId,
+       [Required] int NoteListIdId,
        string Entry
 
     );
